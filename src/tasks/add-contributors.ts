@@ -53,7 +53,7 @@ const run = async (
 
   const authors = commits
     .map((commit: any) => commit.author)
-    .filter((author: any) => !authorFilter(author.username));
+    .filter((author: any) => author.username && !authorFilter(author.username));
 
   if (authors.length === 0) {
     core.warning(`no authors found for commits!`);

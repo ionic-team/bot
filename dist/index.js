@@ -24900,7 +24900,7 @@ const run = async (client, { base = 'master', file = 'README.md', 'commit-messag
     const authorFilter = str_1.createFilterByPatterns(excludeAuthorRegexes);
     const authors = commits
         .map((commit) => commit.author)
-        .filter((author) => !authorFilter(author.username));
+        .filter((author) => author.username && !authorFilter(author.username));
     if (authors.length === 0) {
         core.warning(`no authors found for commits!`);
         return;
