@@ -141,7 +141,7 @@ const run = async (
   await client.pulls.create({
     owner: github.context.repo.owner,
     repo: github.context.repo.repo,
-    title: 'New contributors! 💖',
+    title: commitMessage,
     body: `
 It looks like there are new contributors in the \`${base}\` branch!
 
